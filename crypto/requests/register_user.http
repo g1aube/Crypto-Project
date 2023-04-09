@@ -1,0 +1,39 @@
+@baseURL = http://127.0.0.1:8000/api
+
+# Создание пользователя
+POST {{ baseURL }}/users/ 
+Content-Type: application/json
+
+{
+    "username": "Ivan_kkadet",
+    "first_name": "Иван",
+    "last_name": "Кадетов",
+    "email": "GorobtsovIv@mail.ru",
+    "password": "random123",
+    "phone_number": "79043939977",
+    "address": "Улица Марка"
+}
+
+###
+
+# Получение пользователя
+GET {{ baseURL }}/users/
+Content-Type: application/json
+
+###
+POST {{ baseURL }}/post/
+Content-Type: application/json
+Authorization: Token 622673ccbea9f0e2b8520729f4dbf82896af35b4
+
+{
+    "title": "Заголовок",
+    "description": "Тело",
+    "public": true,
+    "category": 1
+}
+
+###
+
+GET {{baseURL }}/posts/
+Content-Type: application/json
+Authorization: Token 622673ccbea9f0e2b8520729f4dbf82896af35b4
